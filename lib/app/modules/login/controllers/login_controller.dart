@@ -28,10 +28,11 @@ class LoginController extends GetxController {
       if (response != null) {
         if (response.id != null) {
           tokenId = response.id;
+          print(tokenId);
           Get.to(() => const HomeView());
         }
-        saveToken();
       }
+      saveToken();
     }
   }
 

@@ -10,27 +10,45 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     controller.onInit();
     return Scaffold(
-      body: SafeArea(
-        child: ListView(
-          padding: const EdgeInsets.all(20.0),
-          children: [
-            ListView.separated(
-              shrinkWrap: true,
-              itemBuilder: (ctx, index) {
-                return HomeTileWidget(
-                  name: controller.tourDatas[index]?.name ?? '',
-                  travellersCount:
-                      controller.tourDatas[index]?.travellersCount ?? 0,
-                  date: controller.tourDatas[index]?.date ?? '',
-                  duration: controller.tourDatas[index]?.duration ?? 0,
-                  rating: controller.tourDatas[index]!.rating ?? '',
-                  amount: controller.tourDatas[index]!.amount ?? '',
-                );
-              },
-              separatorBuilder: (_, __) => sizedHeight(Get.height * 0.02),
-              itemCount: controller.tourDatas.length,
-            )
-          ],
+      appBar: AppBar(
+        title: const Text('Home'),
+        actions: [
+          IconButton(
+            onPressed: () {
+              controller.logout();
+            },
+            icon: const Icon(Icons.logout),
+          ),
+        ],
+      ),
+      body: Obx(
+        () => SafeArea(
+          child: controller.isLoading.value
+              ? const Center(
+                  child: CircularProgressIndicator(),
+                )
+              : ListView(
+                  padding: const EdgeInsets.all(20.0),
+                  children: [
+                    ListView.separated(
+                      shrinkWrap: true,
+                      itemBuilder: (ctx, index) {
+                        return HomeTileWidget(
+                          name: controller.tourDatas[index]?.name ?? '',
+                          travellersCount:
+                              controller.tourDatas[index]?.travellersCount ?? 0,
+                          date: controller.tourDatas[index]?.date ?? '',
+                          duration: controller.tourDatas[index]?.duration ?? 0,
+                          rating: controller.tourDatas[index]!.rating ?? '',
+                          amount: controller.tourDatas[index]!.amount ?? '',
+                        );
+                      },
+                      separatorBuilder: (_, __) =>
+                          sizedHeight(Get.height * 0.02),
+                      itemCount: controller.tourDatas.length,
+                    )
+                  ],
+                ),
         ),
       ),
     );

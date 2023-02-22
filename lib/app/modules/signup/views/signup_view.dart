@@ -57,6 +57,14 @@ class SignupView extends GetView<SignupController> {
                       ),
                       sizedHeight(Get.height * 0.025),
                       CustomTextFeild(
+                        hintText: 'Password',
+                        leadinIcon: Icons.lock,
+                        controller: controller.passwordController,
+                        validateText: 'please enter the password',
+                        obscureText: true,
+                      ),
+                      sizedHeight(Get.height * 0.025),
+                      CustomTextFeild(
                         hintText: 'Birth Date',
                         leadinIcon: Icons.date_range,
                         controller: controller.birthDateController,
@@ -70,7 +78,7 @@ class SignupView extends GetView<SignupController> {
                         controller: controller.mobileNumberController,
                         validateText: 'please enter your mobile number',
                       ),
-                      sizedHeight(Get.height * 0.02),
+                      sizedHeight(Get.height * 0.07),
                       CustomButtonWidget(
                         buttonWidth: double.infinity,
                         buttonText: 'Register',

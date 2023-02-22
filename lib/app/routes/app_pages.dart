@@ -15,7 +15,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
   // ignore: constant_identifier_names
-  static const INITIAL = Routes.GET_STARTED;
+  static const INITIAL = Routes.SPLASH;
   static final routes = [
     GetPage(
       name: _Paths.HOME,
@@ -51,7 +51,10 @@ class AppPages {
     GetPage(
       name: _Paths.SPLASH,
       page: () => const SplashView(),
-      binding: SplashBinding(),
+      bindings: [
+        SplashBinding(),
+        
+      ],
     ),
   ];
 }

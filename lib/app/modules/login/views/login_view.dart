@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yathra_machine_test/app/custom_widgets/custom_textform_feild.dart';
 import 'package:yathra_machine_test/app/custom_widgets/cutom_button.dart';
+import 'package:yathra_machine_test/app/modules/signup/bindings/signup_binding.dart';
 import 'package:yathra_machine_test/app/modules/signup/views/signup_view.dart';
 import 'package:yathra_machine_test/app/utils/colors.dart';
 import 'package:yathra_machine_test/app/utils/sizes.dart';
@@ -79,6 +80,7 @@ class LoginView extends GetView<LoginController> {
                           recognizer: TapGestureRecognizer()
                             ..onTap = () => Get.to(
                                   const SignupView(),
+                                  binding: SignupBinding(),
                                 ),
                         ),
                       )
