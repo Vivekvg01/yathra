@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yathra_machine_test/app/custom_widgets/custom_textform_feild.dart';
 import 'package:yathra_machine_test/app/custom_widgets/cutom_button.dart';
-import 'package:yathra_machine_test/app/modules/home/views/home_view.dart';
 import 'package:yathra_machine_test/app/modules/signup/views/signup_view.dart';
 import 'package:yathra_machine_test/app/utils/colors.dart';
 import 'package:yathra_machine_test/app/utils/sizes.dart';
@@ -31,55 +30,60 @@ class LoginView extends GetView<LoginController> {
             backgroundColor: Colors.transparent,
             body: Center(
               child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    sizedHeight(Get.height * 0.24),
-                    Text(
-                      'Yaathra',
-                      style: TextStyle(
-                        color: AppColors.kWhiteColor,
-                        fontSize: 35,
+                child: Form(
+                  key: controller.formkey,
+                  child: Column(
+                    children: [
+                      sizedHeight(Get.height * 0.24),
+                      Text(
+                        'Yaathra',
+                        style: TextStyle(
+                          color: AppColors.kWhiteColor,
+                          fontSize: 35,
+                        ),
                       ),
-                    ),
-                    sizedHeight(Get.height * 0.1),
-                    const CustomTextFeild(
-                      hintText: 'Email',
-                      leadinIcon: Icons.email,
-                    ),
-                    sizedHeight(Get.height * 0.025),
-                    const CustomTextFeild(
-                      hintText: 'Password',
-                      leadinIcon: Icons.lock,
-                    ),
-                    sizedHeight(Get.height * 0.02),
-                    // CustomTextFeild(),
-                    sizedHeight(Get.height * 0.1),
-                    CustomButtonWidget(
-                      buttonWidth: double.infinity,
-                      buttonText: 'Login',
-                      onPressed: () {
-                        Get.to(const HomeView());
-                      },
-                    ),
-                    sizedHeight(Get.height * 0.1),
-                    RichText(
-                      text: const TextSpan(
-                        text: 'Forgot Password?',
-                        style: TextStyle(fontSize: 19),
+                      sizedHeight(Get.height * 0.1),
+                      CustomTextFeild(
+                        hintText: 'Email',
+                        leadinIcon: Icons.email,
+                        controller: controller.emailController,
+                        validateText: "Please enter email",
                       ),
-                    ),
-                    sizedHeight(Get.height * 0.02),
-                    RichText(
-                      text: TextSpan(
-                        text: 'Register',
-                        style: const TextStyle(fontSize: 17),
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = () => Get.to(
-                                const SignupView(),
-                              ),
+                      sizedHeight(Get.height * 0.025),
+                      CustomTextFeild(
+                        hintText: 'Password',
+                        leadinIcon: Icons.lock,
+                        controller: controller.passwordController,
+                        validateText: 'please enter password',
                       ),
-                    )
-                  ],
+                      sizedHeight(Get.height * 0.1),
+                      CustomButtonWidget(
+                        buttonWidth: double.infinity,
+                        buttonText: 'Login',
+                        onPressed: () {
+                          controller.onLoginButtonClicked();
+                        },
+                      ),
+                      sizedHeight(Get.height * 0.1),
+                      RichText(
+                        text: const TextSpan(
+                          text: 'Forgot Password?',
+                          style: TextStyle(fontSize: 19),
+                        ),
+                      ),
+                      sizedHeight(Get.height * 0.02),
+                      RichText(
+                        text: TextSpan(
+                          text: 'Register',
+                          style: const TextStyle(fontSize: 17),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () => Get.to(
+                                  const SignupView(),
+                                ),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),

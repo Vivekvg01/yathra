@@ -9,12 +9,16 @@ class CustomTextFeild extends StatelessWidget {
     required this.leadinIcon,
     this.obscureText = false,
     this.textInputType,
+    required this.controller,
+    required this.validateText,
   });
 
   final String hintText;
   final IconData leadinIcon;
   final bool obscureText;
   final TextInputType? textInputType;
+  final TextEditingController controller;
+  final String validateText;
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +29,12 @@ class CustomTextFeild extends StatelessWidget {
         borderRadius: BorderRadius.circular(25),
       ),
       child: TextFormField(
+        controller: controller,
         obscureText: obscureText,
         keyboardType: textInputType,
         style: TextStyle(color: AppColors.kWhiteColor),
         decoration: InputDecoration(
+          contentPadding: const EdgeInsets.symmetric(vertical: 20),
           prefixIcon: Icon(
             leadinIcon,
             color: AppColors.kWhiteColor,
@@ -38,6 +44,13 @@ class CustomTextFeild extends StatelessWidget {
           hintStyle: TextStyle(color: AppColors.kWhiteColor),
           border: InputBorder.none,
         ),
+        validator: (validator) {
+          if (validator == null || validator.isEmpty) {
+            return validateText;
+          } else {
+            return null;
+          }
+        },
       ),
     );
   }

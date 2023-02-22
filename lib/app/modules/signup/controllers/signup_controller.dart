@@ -1,23 +1,16 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SignupController extends GetxController {
-  //TODO: Implement SignupController
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController birthDateController = TextEditingController();
+  final TextEditingController mobileNumberController = TextEditingController();
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  final GlobalKey<FormState> formkey = GlobalKey<FormState>();
+
+  void onRegisterButtonClick() {
+    if (formkey.currentState!.validate()) {}
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

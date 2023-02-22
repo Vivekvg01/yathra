@@ -3,11 +3,12 @@ import 'dart:developer';
 import 'package:http/http.dart' as http;
 import 'package:yathra_machine_test/app/modules/home/model/tour_list_model.dart';
 import 'package:yathra_machine_test/app/modules/home/model/tour_model.dart';
+import 'package:yathra_machine_test/app/utils/api_endpoints.dart';
 
 class TourApi {
   Future<TourListModel?> getTourDatas() async {
     final url = Uri.parse(
-      'http://152.69.167.64:3000/api/tours',
+      '${ApiEndPoints.kbaseUrl}${ApiEndPoints.tourUrl}',
     );
 
     var header = {'Content-type': 'application/json'};
