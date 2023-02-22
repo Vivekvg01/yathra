@@ -8,6 +8,6 @@ Widget sizedHeight(double height) {
 
 Widget sizedWidth(double width) {
   return SizedBox(
-    height: width,
+    width: width,
   );
 }

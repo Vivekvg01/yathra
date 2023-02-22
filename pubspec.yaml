@@ -18,7 +18,7 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
- 
+
   assets:
-   - assets\login_bakground.jpg
-   - assets\signup_background.jpg
+    - assets\login_bakground.jpg
+    - assets\signup_background.jpg
