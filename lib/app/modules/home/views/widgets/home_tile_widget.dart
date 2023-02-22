@@ -4,8 +4,23 @@ import 'package:get/get.dart';
 import 'package:yathra_machine_test/app/utils/colors.dart';
 import 'package:yathra_machine_test/app/utils/sizes.dart';
 
-class HomeTileWidget extends StatelessWidget {
-  const HomeTileWidget({super.key});
+class HomeTileWidget extends GetView {
+  // ignore: use_key_in_widget_constructors
+  const HomeTileWidget({
+    required this.name,
+    required this.travellersCount,
+    required this.date,
+    required this.duration,
+    required this.rating,
+    required this.amount,
+  });
+
+  final String name;
+  final int travellersCount;
+  final String date;
+  final int duration;
+  final String rating;
+  final String amount;
 
   @override
   Widget build(BuildContext context) {
@@ -31,9 +46,9 @@ class HomeTileWidget extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                const Text(
-                  'kuta,Bali',
-                  style: TextStyle(
+                Text(
+                  name,
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
                   ),
@@ -45,7 +60,7 @@ class HomeTileWidget extends StatelessWidget {
                       Icons.date_range,
                       color: Colors.pink[200],
                     ),
-                    const Text(' 3 Days'),
+                    Text('$duration Days'),
                   ],
                 ),
                 sizedHeight(Get.height * 0.01),
@@ -62,9 +77,9 @@ class HomeTileWidget extends StatelessWidget {
                   ),
                 ),
                 sizedHeight(Get.height * 0.01),
-                const Text(
-                  '\$699',
-                  style: TextStyle(
+                Text(
+                  '\$$amount',
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
                   ),
