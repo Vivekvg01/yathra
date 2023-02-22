@@ -19,7 +19,7 @@ class LoginView extends GetView<LoginController> {
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage(
-                'assets/login_background.jpg',
+                'assets/login_bakground.jpg',
               ),
               fit: BoxFit.cover,
             ),
@@ -47,8 +47,10 @@ class LoginView extends GetView<LoginController> {
                       leadinIcon: Icons.email,
                     ),
                     sizedHeight(Get.height * 0.025),
-                    CustomTextFeild(
-                        hintText: 'Password', leadinIcon: Icons.lock),
+                    const CustomTextFeild(
+                      hintText: 'Password',
+                      leadinIcon: Icons.lock,
+                    ),
                     sizedHeight(Get.height * 0.02),
                     // CustomTextFeild(),
                     sizedHeight(Get.height * 0.1),
@@ -82,7 +84,7 @@ class LoginView extends GetView<LoginController> {
               ),
             ),
           ),
-        )
+        ),
       ],
     );
   }
