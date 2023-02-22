@@ -1,23 +1,12 @@
 import 'package:get/get.dart';
+import 'package:yathra_machine_test/app/modules/login/views/login_view.dart';
 
 class GetStartedController extends GetxController {
-  //TODO: Implement GetStartedController
-
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  void gotToLogin() {
+    Get.to(
+      const LoginView(),
+      transition: Transition.rightToLeft,
+      duration: const Duration(milliseconds: 700),
+    );
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

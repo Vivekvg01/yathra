@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-
 import '../modules/get_started/bindings/get_started_binding.dart';
 import '../modules/get_started/views/get_started_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -15,8 +14,8 @@ part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
-
-  static const INITIAL = Routes.LOGIN;
+  // ignore: constant_identifier_names
+  static const INITIAL = Routes.GET_STARTED;
   static final routes = [
     GetPage(
       name: _Paths.HOME,
@@ -44,7 +43,10 @@ class AppPages {
     GetPage(
       name: _Paths.GET_STARTED,
       page: () => const GetStartedView(),
-      binding: GetStartedBinding(),
+      bindings: [
+        GetStartedBinding(),
+        LoginBinding(),
+      ],
     ),
     GetPage(
       name: _Paths.SPLASH,

@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 import 'package:yathra_machine_test/app/modules/login/model/login_resp_model.dart';
 import 'package:yathra_machine_test/app/utils/api_endpoints.dart';
 import 'package:http/http.dart' as http;
@@ -17,6 +18,7 @@ class LoginApi {
         body: jsonEncode(reqBody),
         headers: header,
       );
+      log(response.body);
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body);
         return LoginRespModel.fromJson(data);
