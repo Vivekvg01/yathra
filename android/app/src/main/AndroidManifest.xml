@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="conm.yarthra.yathra_machine_test">
+      <uses-permission android:name="android.permission.INTERNET" />
    <application
         android:label="yathra_machine_test"
         android:name="${applicationName}"
@@ -30,5 +31,7 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+           
     </application>
 </manifest>
+
