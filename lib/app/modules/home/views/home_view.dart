@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:yathra_machine_test/app/modules/home/views/widgets/app_bar_widget.dart';
 import 'package:yathra_machine_test/app/modules/home/views/widgets/home_tile_widget.dart';
 import 'package:yathra_machine_test/app/utils/sizes.dart';
 import '../controllers/home_controller.dart';
@@ -10,16 +11,9 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     controller.onInit();
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home'),
-        actions: [
-          IconButton(
-            onPressed: () {
-              controller.logout();
-            },
-            icon: const Icon(Icons.logout),
-          ),
-        ],
+      appBar: const PreferredSize(
+        preferredSize: Size.fromHeight(120),
+        child: AppBarWidget(),
       ),
       body: Obx(
         () => SafeArea(

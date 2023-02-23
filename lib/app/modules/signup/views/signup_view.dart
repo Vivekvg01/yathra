@@ -41,12 +41,19 @@ class SignupView extends GetView<SignupController> {
                           fontSize: 35,
                         ),
                       ),
-                      sizedHeight(Get.height * 0.1),
+                      sizedHeight(Get.height * 0.05),
                       CustomTextFeild(
-                        hintText: 'Full Name',
+                        hintText: 'First Name',
                         leadingIcon: Icons.person,
-                        controller: controller.nameController,
-                        validateText: 'please enter your name',
+                        controller: controller.fistNameController,
+                        validateText: 'please enter your first name',
+                      ),
+                      sizedHeight(Get.height * 0.025),
+                      CustomTextFeild(
+                        hintText: 'Last Name',
+                        leadingIcon: Icons.person,
+                        controller: controller.lastNameController,
+                        validateText: 'please enter your last name',
                       ),
                       sizedHeight(Get.height * 0.025),
                       CustomTextFeild(

@@ -51,6 +51,7 @@ class CustomTextFeild extends StatelessWidget {
                 bottom: 8,
               ),
               child: TextFormField(
+                style: const TextStyle(color: Colors.white),
                 obscureText: obscureText,
                 maxLines: 1,
                 validator: (validator) {

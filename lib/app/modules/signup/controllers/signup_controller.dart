@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:yathra_machine_test/app/modules/signup/api/signup_api.dart';
 
 class SignupController extends GetxController {
   @override
@@ -11,7 +12,9 @@ class SignupController extends GetxController {
     super.onInit();
   }
 
-  final TextEditingController nameController = TextEditingController();
+  final TextEditingController fistNameController = TextEditingController();
+  final TextEditingController lastNameController = TextEditingController();
+  final TextEditingController userNameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController birthDateController = TextEditingController();
@@ -20,6 +23,16 @@ class SignupController extends GetxController {
   final GlobalKey<FormState> formkey = GlobalKey<FormState>();
 
   void onRegisterButtonClick() {
-    if (formkey.currentState!.validate()) {}
+    if (formkey.currentState!.validate()) {
+      SignUpApi().userSignUp(
+        fistNameController.text,
+        lastNameController.text,
+        userNameController.text,
+        emailController.text,
+        mobileNumberController.text,
+        birthDateController.text,
+        passwordController.text,
+      );
+    }
   }
 }

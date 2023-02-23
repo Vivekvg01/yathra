@@ -25,36 +25,38 @@ class GetStartedView extends GetView<GetStartedController> {
           backgroundColor: Colors.transparent,
           body: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Column(
-              children: [
-                sizedHeight(Get.height * 0.24),
-                Text(
-                  'Yaathra',
-                  style: TextStyle(
-                    color: AppColors.kWhiteColor,
-                    fontSize: 35,
+            child: Center(
+              child: Column(
+                children: [
+                  sizedHeight(Get.height * 0.24),
+                  Text(
+                    'Yaathra',
+                    style: TextStyle(
+                      color: AppColors.kWhiteColor,
+                      fontSize: 35,
+                    ),
                   ),
-                ),
-                sizedHeight(Get.height * 0.2),
-                Text(
-                  "Explore Wonderful places for Tour,\nTravel & Adventure",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: AppColors.kWhiteColor,
-                    fontSize: 21,
-                    fontWeight: FontWeight.bold,
+                  sizedHeight(Get.height * 0.2),
+                  Text(
+                    "Explore Wonderful places for Tour,\nTravel & Adventure",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: AppColors.kWhiteColor,
+                      fontSize: 21,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-                sizedHeight(Get.height * 0.2),
-                CustomButtonWidget(
-                  buttonHeight: Get.height * 0.06,
-                  buttonWidth: Get.width * 0.7,
-                  buttonText: 'Get Started',
-                  onPressed: () {
-                    controller.gotToLogin();
-                  },
-                )
-              ],
+                  sizedHeight(Get.height * 0.2),
+                  CustomButtonWidget(
+                    buttonHeight: Get.height * 0.06,
+                    buttonWidth: Get.width * 0.7,
+                    buttonText: 'Get Started',
+                    onPressed: () {
+                      controller.gotToLogin();
+                    },
+                  )
+                ],
+              ),
             ),
           ),
         ),
