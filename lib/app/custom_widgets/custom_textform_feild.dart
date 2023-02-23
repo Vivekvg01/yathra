@@ -51,7 +51,7 @@ class CustomTextFeild extends StatelessWidget {
                 bottom: 8,
               ),
               child: TextFormField(
-                obscureText: true,
+                obscureText: obscureText,
                 maxLines: 1,
                 validator: (validator) {
                   if (validator == null || validator.isEmpty) {

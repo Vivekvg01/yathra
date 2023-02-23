@@ -14,9 +14,7 @@ class GetStartedController extends GetxController {
 
   void gotToLogin() {
     Get.to(
-      const LoginView(),
-      transition: Transition.fadeIn,
-      duration: const Duration(milliseconds: 700),
+      () => const LoginView(),
     );
   }
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
-import 'package:yathra_machine_test/app/modules/home/views/home_view.dart';
 import 'package:yathra_machine_test/app/modules/login/api/login_api.dart';
 import 'package:yathra_machine_test/app/modules/login/model/login_resp_model.dart';
 
@@ -29,7 +28,6 @@ class LoginController extends GetxController {
       if (response != null) {
         if (response.id != null) {
           tokenId = response.id;
-          Get.to(() => const HomeView());
         }
       }
       saveToken();

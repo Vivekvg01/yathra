@@ -52,6 +52,7 @@ class LoginView extends GetView<LoginController> {
                       ),
                       sizedHeight(Get.height * 0.025),
                       CustomTextFeild(
+                        obscureText: true,
                         hintText: 'Password',
                         leadingIcon: Icons.lock,
                         controller: controller.passwordController,
@@ -79,7 +80,7 @@ class LoginView extends GetView<LoginController> {
                           style: const TextStyle(fontSize: 17),
                           recognizer: TapGestureRecognizer()
                             ..onTap = () => Get.to(
-                                  const SignupView(),
+                                  () => const SignupView(),
                                   binding: SignupBinding(),
                                 ),
                         ),
