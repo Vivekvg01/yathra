@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:yathra_machine_test/app/utils/colors.dart';
+import 'package:yathra_machine_test/app/utils/sizes.dart';
 
 class CustomTextFeild extends StatelessWidget {
   const CustomTextFeild({
     super.key,
     required this.hintText,
-    required this.leadinIcon,
+    required this.leadingIcon,
     this.obscureText = false,
     this.textInputType,
     required this.controller,
@@ -14,7 +13,7 @@ class CustomTextFeild extends StatelessWidget {
   });
 
   final String hintText;
-  final IconData leadinIcon;
+  final IconData leadingIcon;
   final bool obscureText;
   final TextInputType? textInputType;
   final TextEditingController controller;
@@ -23,34 +22,55 @@ class CustomTextFeild extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: Get.height * 0.07,
+      height: 60,
       decoration: BoxDecoration(
         color: Colors.white.withOpacity(0.3),
-        borderRadius: BorderRadius.circular(25),
+        borderRadius: BorderRadius.circular(35),
       ),
-      child: TextFormField(
-        controller: controller,
-        obscureText: obscureText,
-        keyboardType: textInputType,
-        style: TextStyle(color: AppColors.kWhiteColor),
-        decoration: InputDecoration(
-          contentPadding: const EdgeInsets.symmetric(vertical: 20),
-          prefixIcon: Icon(
-            leadinIcon,
-            color: AppColors.kWhiteColor,
+      child: Row(
+        children: [
+          sizedWidth(10),
+          Container(
+            height: 45,
+            width: 45,
+            decoration: BoxDecoration(
+              color: Colors.transparent,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Icon(
+              leadingIcon,
+              color: Colors.white,
+              size: 23,
+            ),
           ),
-          hintText: hintText,
-          fillColor: AppColors.kWhiteColor,
-          hintStyle: TextStyle(color: AppColors.kWhiteColor),
-          border: InputBorder.none,
-        ),
-        validator: (validator) {
-          if (validator == null || validator.isEmpty) {
-            return validateText;
-          } else {
-            return null;
-          }
-        },
+          sizedWidth(10),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.only(
+                top: 5,
+                bottom: 8,
+              ),
+              child: TextFormField(
+                obscureText: true,
+                maxLines: 1,
+                validator: (validator) {
+                  if (validator == null || validator.isEmpty) {
+                    return validateText;
+                  } else {
+                    return null;
+                  }
+                },
+                controller: controller,
+                decoration: InputDecoration(
+                  contentPadding: const EdgeInsets.symmetric(vertical: 1),
+                  hintText: hintText,
+                  border: InputBorder.none,
+                ),
+                keyboardType: textInputType,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

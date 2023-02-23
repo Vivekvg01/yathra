@@ -8,7 +8,11 @@ class SignupBinding extends Bindings {
   void dependencies() {
     Get.lazyPut<SignupController>(
       () => SignupController(),
-      fenix: true
+      fenix: true,
+    );
+    Get.lazyPut<LoginController>(
+      () => LoginController(),
+      fenix: true,
     );
     Get.lazyPut<HomeController>(
       () => HomeController(),
@@ -16,7 +20,7 @@ class SignupBinding extends Bindings {
     );
     Get.lazyPut<LoginController>(
       () => LoginController(),
-      fenix: true
+      fenix: true,
     );
   }
 }

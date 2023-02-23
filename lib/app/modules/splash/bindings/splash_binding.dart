@@ -14,8 +14,10 @@ class SplashBinding extends Bindings {
     Get.lazyPut<HomeController>(
       () => HomeController(),
     );
-    Get.lazyPut<GetStartedController>(() => GetStartedController(),
-        fenix: true);
+    Get.lazyPut<GetStartedController>(
+      () => GetStartedController(),
+      fenix: true,
+    );
     Get.lazyPut(
       () => LoginController(),
       fenix: true,

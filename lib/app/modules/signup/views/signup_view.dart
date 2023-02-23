@@ -16,7 +16,7 @@ class SignupView extends GetView<SignupController> {
         Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage(
+              image: ExactAssetImage(
                 'assets/signup_background.jpg',
               ),
               fit: BoxFit.cover,
@@ -44,21 +44,21 @@ class SignupView extends GetView<SignupController> {
                       sizedHeight(Get.height * 0.1),
                       CustomTextFeild(
                         hintText: 'Full Name',
-                        leadinIcon: Icons.person,
+                        leadingIcon: Icons.person,
                         controller: controller.nameController,
                         validateText: 'please enter your name',
                       ),
                       sizedHeight(Get.height * 0.025),
                       CustomTextFeild(
                         hintText: 'Email Address',
-                        leadinIcon: Icons.email,
+                        leadingIcon: Icons.email,
                         controller: controller.emailController,
                         validateText: 'please enter your email address',
                       ),
                       sizedHeight(Get.height * 0.025),
                       CustomTextFeild(
                         hintText: 'Password',
-                        leadinIcon: Icons.lock,
+                        leadingIcon: Icons.lock,
                         controller: controller.passwordController,
                         validateText: 'please enter the password',
                         obscureText: true,
@@ -66,14 +66,14 @@ class SignupView extends GetView<SignupController> {
                       sizedHeight(Get.height * 0.025),
                       CustomTextFeild(
                         hintText: 'Birth Date',
-                        leadinIcon: Icons.date_range,
+                        leadingIcon: Icons.date_range,
                         controller: controller.birthDateController,
                         validateText: 'please add your date of birth',
                       ),
                       sizedHeight(Get.height * 0.025),
                       CustomTextFeild(
                         hintText: 'Mobile Number',
-                        leadinIcon: Icons.phone_android,
+                        leadingIcon: Icons.phone_android,
                         textInputType: TextInputType.number,
                         controller: controller.mobileNumberController,
                         validateText: 'please enter your mobile number',
@@ -112,7 +112,7 @@ class SignupView extends GetView<SignupController> {
               ),
             ),
           ),
-        )
+        ),
       ],
     );
   }

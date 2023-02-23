@@ -6,13 +6,14 @@ import 'package:yathra_machine_test/app/modules/login/api/login_api.dart';
 import 'package:yathra_machine_test/app/modules/login/model/login_resp_model.dart';
 
 class LoginController extends GetxController {
+  @override
+  void onInit() {
+    precacheImage(const AssetImage('assets/login_bakground.jpg'), Get.context!);
+    super.onInit();
+  }
+
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-
-  void precacheMyImage() {
-    AssetImage myImage = const AssetImage('assets/login_bakground.jpg');
-    precacheImage(myImage, Get.context!);
-  }
 
   String? tokenId;
   RxBool isLoggedIn = false.obs;
@@ -28,7 +29,6 @@ class LoginController extends GetxController {
       if (response != null) {
         if (response.id != null) {
           tokenId = response.id;
-          print(tokenId);
           Get.to(() => const HomeView());
         }
       }

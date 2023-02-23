@@ -14,7 +14,7 @@ class GetStartedView extends GetView<GetStartedController> {
         Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage(
+              image: ExactAssetImage(
                 'assets/get_started_background.jpg',
               ),
               fit: BoxFit.cover,

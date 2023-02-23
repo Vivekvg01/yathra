@@ -46,14 +46,14 @@ class LoginView extends GetView<LoginController> {
                       sizedHeight(Get.height * 0.1),
                       CustomTextFeild(
                         hintText: 'Email',
-                        leadinIcon: Icons.email,
+                        leadingIcon: Icons.email,
                         controller: controller.emailController,
                         validateText: "Please enter email",
                       ),
                       sizedHeight(Get.height * 0.025),
                       CustomTextFeild(
                         hintText: 'Password',
-                        leadinIcon: Icons.lock,
+                        leadingIcon: Icons.lock,
                         controller: controller.passwordController,
                         validateText: 'please enter password',
                       ),
