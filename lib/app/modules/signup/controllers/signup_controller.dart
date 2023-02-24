@@ -29,9 +29,9 @@ class SignupController extends GetxController {
         lastNameController.text,
         userNameController.text,
         emailController.text,
-        mobileNumberController.text,
-        birthDateController.text,
         passwordController.text,
+        birthDateController.text,
+        mobileNumberController.text,
       );
     }
   }
